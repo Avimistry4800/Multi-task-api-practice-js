@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/stylle.css">
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
@@ -52,10 +52,10 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="10000">
-                <img src="images/hotel.png" class="d-block w-100" alt="...">
+                <img src="images/fliht.png" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h3>Hotel Booking</h3>
-                  <h5>Book your favorite Hotel room.</h5>
+                  <h3>Flight Booking</h3>
+                  <h5>Book your favorite Flight.</h5>
                 </div>
               </div>
               <div class="carousel-item" data-bs-interval="2000">
@@ -90,6 +90,33 @@
             </button>
           </div>
        </div>
+    </section>
+
+    <section id="flight-container">
+        <div class="flight-wraper">
+            <div class="flight-search">
+                <h2 class="title">Lets search for Flight</h2>
+                <div class="flight-seach-box">
+                    <input type="text" class="flight-search-control" placeholder="Search here for Flight..." id="flight-search-input"> 
+                    <button type="submit" class="flight-search-btn btn" id="flight-search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        <!-- <div class="flight-search">
+        <h4 class="mt-2 text-center">Search for flight</h4>
+        <div class="flight-search-box"> 
+                <input type="text" class="flight-search-control" id="flight-search-input" placeholder="search for flight">
+            <button type="submit" id="flight-search-btn" class="btn flight-search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div> -->
+    </section>
+
+
     <script src="app.js"></script>
     
 </body>
