@@ -22,32 +22,32 @@
 
 }
 
-.flight-container{
+.covid-container{
     min-height: 100vh;
 }
-.flight-wraper{
+.covid-wraper{
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
     background: #fff;
     text-align: center;
 }
-.flight-search{
+.covid-search{
     margin: 2rem 0;
 }
 
-.flight-seach-box{
+.covid-seach-box{
     margin: 1.2rem;
     display: flex;
     align-items: stretch;
 }
 
-.flight-search-control,
-.flight-search-btn{
+.covid-search-control,
+.covid-search-btn{
     width: 100%;
 }
 
-.flight-search-control{
+.covid-search-control{
     padding: 0 1rem;
     font-size: 1.1rem;
     font-family: inherit;
@@ -58,7 +58,7 @@
     border-bottom-left-radius: 2rem;
 }
 
-.flight-search-btn{
+.covid-search-btn{
     width: 55px;
     height: 55px;
     font-size: 1.8rem;
@@ -74,6 +74,6 @@
     -o-transition: all 0.4s linear;
 }
 
-.flight-search-btn:hover{
+.covid-search-btn:hover{
     background: var(--tenne-tawny-dark);
 }
