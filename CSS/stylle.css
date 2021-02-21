@@ -86,8 +86,11 @@
 
 #movie-searchable{
     margin-top: 20px;
+    margin-bottom: 50px;
 }
-
+.movie{
+    margin-bottom: 50px;
+}
 .section img {
     width: 300px;
     transition: 270ms all;
@@ -99,8 +102,13 @@ img:hover{
 }
 
 .content{
-    border: 1px solid blueviolet;
+    border: 1px solid lightgrey;
+    padding: 20px;
     display: none;
+    
+}
+#content-close{
+    cursor: pointer;
 }
 .content div{
     display: flex;

@@ -1,21 +1,12 @@
-
-// Initial values
-const apiKEy= '25f7427acddaad32df99285ff2406c1a';
-const url = `https://api.themoviedb.org/3/search/movie?api_key=25f7427acddaad32df99285ff2406c1a`;
-const imageUrl = 'https://image.tmdb.org/t/p/w500/'
-
 // Selecting elements form DOM
 const movieSearchBtn = document.querySelector("#movie-search-btn");
 const searchInputText=document.querySelector('#movie-search-input');
 const movieSearchable = document.querySelector("#movie-searchable");
+const movieContainer = document.querySelector("#movie-container");
 
 
-function generateurl(path) {
-    const url = `https://api.themoviedb.org/3${path}?api_key=25f7427acddaad32df99285ff2406c1a`;
-    return url;
-}
 
-function createMovieContainer(movies) {
+function createMovieContainer(movies, title='') { 
     movieElement=document.createElement('div');
     movieElement.setAttribute('class','movie');
 
@@ -27,10 +18,11 @@ function createMovieContainer(movies) {
                 data-movie-id=${movie.id}
              />`;
             }
-        })
+        }) 
     }
 
     const movieTemplate =` 
+            <h2>${title}</h2>
             <section class="section">
             ${movieSection(movies)}
             </section>
@@ -52,17 +44,29 @@ function renderSearchMovies(data){
     console.log('data' , data);
 }
 
+function renderMovies(data){
+    const movies = data.results;
+    const movieBlock = createMovieContainer(movies,this.title);
+    movieContainer.appendChild(movieBlock);
+}
+
+function handleError(error) {
+    console.log('Error :',error)
+}
+
 // EventListeners
 movieSearchBtn.onclick = function(event) {
     const value = searchInputText.value;
     const path = '/search/movie';
     const newUrl = generateurl(path) + '&query='+ value;
+
     fetch(newUrl)
     .then(res =>res.json())
     .then(renderSearchMovies)
     .catch((error)=>{
         console.log('Error', error);
     })
+
     searchInputText.value='';
     console.log("value :" , value);
 }
@@ -123,4 +127,7 @@ document.onclick = function (event) {
         content.classList.remove('content-display');
     }
 }
+getUpcomingMovies();
+getTopRatedMovies();
+getPopulerMovies();
                   
