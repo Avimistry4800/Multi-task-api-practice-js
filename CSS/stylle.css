@@ -77,3 +77,13 @@
 .movie-search-btn:hover{
     background: var(--tenne-tawny-dark);
 }
+
+.section{
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.section img {
+    width: 250px;
+}

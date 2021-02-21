@@ -14,9 +14,11 @@ function createMovieContainer(movies) {
 
     function movieSection(movies) {
         return movies.map((movie) =>{
-            return `
+            if (movie.poster_path) {
+                return `
             <img src=${imageUrl + movie.poster_path} data-movie-id=${movie.id}/>
             `;
+            }
         })
     }
 
