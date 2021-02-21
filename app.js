@@ -6,6 +6,7 @@ const movieSearchable = document.querySelector("#movie-searchable");
 // API key
 const apiKEy= '25f7427acddaad32df99285ff2406c1a';
 const url = `https://api.themoviedb.org/3/search/movie?api_key=25f7427acddaad32df99285ff2406c1a`;
+const imageUrl = 'https://image.tmdb.org/t/p/w500/'
 
 function createMovieContainer(movies) {
     movieElement=document.createElement('div');
@@ -14,7 +15,7 @@ function createMovieContainer(movies) {
     function movieSection(movies) {
         return movies.map((movie) =>{
             return `
-            <img src=${movie.poster_path} data-movie-id=${movie.id}/>
+            <img src=${imageUrl + movie.poster_path} data-movie-id=${movie.id}/>
             `;
         })
     }
