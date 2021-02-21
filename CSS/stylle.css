@@ -22,32 +22,32 @@
 
 }
 
-.covid-container{
+.movie-container{
     min-height: 100vh;
 }
-.covid-wraper{
+.movie-wraper{
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
     background: #fff;
     text-align: center;
 }
-.covid-search{
+.movie-search{
     margin: 2rem 0;
 }
 
-.covid-seach-box{
+.movie-seach-box{
     margin: 1.2rem;
     display: flex;
     align-items: stretch;
 }
 
-.covid-search-control,
-.covid-search-btn{
+.movie-search-control,
+.movie-search-btn{
     width: 100%;
 }
 
-.covid-search-control{
+.movie-search-control{
     padding: 0 1rem;
     font-size: 1.1rem;
     font-family: inherit;
@@ -58,7 +58,7 @@
     border-bottom-left-radius: 2rem;
 }
 
-.covid-search-btn{
+.movie-search-btn{
     width: 55px;
     height: 55px;
     font-size: 1.8rem;
@@ -74,6 +74,6 @@
     -o-transition: all 0.4s linear;
 }
 
-.covid-search-btn:hover{
+.movie-search-btn:hover{
     background: var(--tenne-tawny-dark);
 }

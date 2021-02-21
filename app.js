@@ -1,34 +1,56 @@
-const covidSearchBtn = document.getElementById("covid-search-btn");
-const covidList = document.getElementById("covid");
+// Selecting elements form DOM
+const movieSearchBtn = document.querySelector("#movie-search-btn");
+const searchInputText=document.querySelector('#movie-search-input');
+const movieSearchable = document.querySelector("#movie-searchable");
 
+// API key
+const apiKEy= '25f7427acddaad32df99285ff2406c1a';
+const url = `https://api.themoviedb.org/3/search/movie?api_key=25f7427acddaad32df99285ff2406c1a`;
+
+function createMovieContainer(movies) {
+    movieElement=document.createElement('div');
+    movieElement.setAttribute('class','movie');
+
+    function movieSection(movies) {
+        movies.map((movie) =>{
+            return `
+            <img src=${movie.poster_path} data-movie-id=${movie.id} />
+            `;
+        })
+    }
+
+    const movieTemplate =` 
+            <section class="section">
+            ${movieSection(movies)}
+            </section>
+             <div class="content">
+             <p id="content-close">X</p>
+             </div>
+            
+    `;
+
+    movieElement.innerHTML = movieTemplate;
+    return movieElement
+
+}
 
 // EventListeners
-
-covidSearchBtn.addEventListener('click', getcovidList());
-
-// Get covid list 
-
-function getcovidList() {
-    let searchInputText=document.getElementById('covid-search-input').value.trim();
-    fetch("https://covid-193.p.rapidapi.com/countries", {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-key": "2056590684msh0a1b876a291685ep1abadajsn659338f4a423",
-            "x-rapidapi-host": "covid-193.p.rapidapi.com"
-        }
+movieSearchBtn.onclick = function(event) {
+    const value = searchInputText.value;
+    const newUrl = url + '&query='+value;
+    fetch(newUrl)
+    .then(res =>res.json())
+    .then((data) =>{
+        const movies = data.results;
+        const movieBlock = createMovieContainer(movies);
+        movieSearchable.appendChild(movieBlock)
+        console.log('data' , data);
     })
-    .then(response => {
-        console.log(response);
+    .catch((error)=>{
+        console.log('Error', error);
     })
-    .then((data)=> {
-        manipulateData(data)
-    });
-
+    console.log("value :" , value);
 }
 
-function manipulateData(data) {
-    countries.forEach(country => {
-        var country = data.countries[0];
-        console.log(country);
-    });
-}
+
+                  
