@@ -12,9 +12,9 @@ function createMovieContainer(movies) {
     movieElement.setAttribute('class','movie');
 
     function movieSection(movies) {
-        movies.map((movie) =>{
+        return movies.map((movie) =>{
             return `
-            <img src=${movie.poster_path} data-movie-id=${movie.id} />
+            <img src=${movie.poster_path} data-movie-id=${movie.id}/>
             `;
         })
     }
