@@ -15,9 +15,10 @@ function createMovieContainer(movies) {
     function movieSection(movies) {
         return movies.map((movie) =>{
             if (movie.poster_path) {
-                return `
-            <img src=${imageUrl + movie.poster_path} data-movie-id=${movie.id}/>
-            `;
+                return `<img 
+                src=${imageUrl + movie.poster_path} 
+                data-movie-id=${movie.id}
+             />`;
             }
         })
     }
@@ -36,6 +37,13 @@ function createMovieContainer(movies) {
     return movieElement
 
 }
+function renderSearchMovies(data){
+    movieSearchable.innerHTML='';
+    const movies = data.results;
+    const movieBlock = createMovieContainer(movies);
+    movieSearchable.appendChild(movieBlock)
+    console.log('data' , data);
+}
 
 // EventListeners
 movieSearchBtn.onclick = function(event) {
@@ -43,17 +51,19 @@ movieSearchBtn.onclick = function(event) {
     const newUrl = url + '&query='+value;
     fetch(newUrl)
     .then(res =>res.json())
-    .then((data) =>{
-        const movies = data.results;
-        const movieBlock = createMovieContainer(movies);
-        movieSearchable.appendChild(movieBlock)
-        console.log('data' , data);
-    })
+    .then(renderSearchMovies)
     .catch((error)=>{
         console.log('Error', error);
     })
+    searchInputText.value='';
     console.log("value :" , value);
 }
 
-
+// Event Delegation
+document.onclick = function (event) {
+    const target = event.target;
+    if (target.tagName.toLowerCase() === 'img') {
+        console.log('hi there');
+    } 
+}
                   

@@ -84,6 +84,16 @@
     overflow-x: auto;
 }
 
+#movie-searchable{
+    margin-top: 20px;
+}
+
 .section img {
-    width: 250px;
+    width: 300px;
+    transition: 270ms all;
+}
+img:hover{
+    margin-left: 0 40px;
+    transform: scale(1.2);
+    cursor: pointer;
 }
